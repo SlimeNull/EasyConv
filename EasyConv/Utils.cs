@@ -68,7 +68,7 @@ namespace EasyConv
             try
             {
                 RegistryKey converter = Registry.ClassesRoot.CreateSubKey(@"*\shell\converter_ffmpeg");
-                converter.SetValue("MUIVerb", "Converter");
+                converter.SetValue("MUIVerb", "MediaConvert");
                 converter.SetValue("Subcommands", "");
                 //converter.SetValue("Icon", "imageres.dll,229");
 
