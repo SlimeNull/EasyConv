@@ -37,7 +37,7 @@ Console.WriteLine("EasyConv 管理. 按下按键:");
 Console.WriteLine("  安装(Install): A");
 Console.WriteLine("  卸载(Uninstall): B");
 
-bool next;
+bool next;  // 是否再次询问用户
 
 do
 {
