@@ -61,7 +61,7 @@ do
 
         if (ffmpegDir == null)
         {
-            Console.WriteLine("出现了不可预知的错误, 无法获取 ffmpeg.exe 的父级目录");
+            Console.WriteLine("出现了不可预知的错误, 无法获取 ffmpeg.exe 的父级目录 (Unexpected error, cannot get parent directory of ffmpeg.exe)");
             Environment.ExitCode = -2;
             break;
         }
@@ -78,7 +78,7 @@ do
             Console.WriteLine("注册表写入完成 (Registry wrote):");
             Console.WriteLine($"  {Utils.RegistryBase}");
 
-            Console.WriteLine("安装成功 (Install successfully");
+            Console.WriteLine("安装成功 (Install successfully)");
         }
         else
         {
@@ -97,7 +97,7 @@ do
         string? ffmpegDir = Path.GetDirectoryName(ffmpegPath);
         if (ffmpegDir == null)
         {
-            Console.WriteLine("出现了不可预知的错误, 无法获取 ffmpeg.exe 的父级目录");
+            Console.WriteLine("出现了不可预知的错误, 无法获取 ffmpeg.exe 的父级目录 (Unexpected error, cannot get parent directory of ffmpeg.exe)");
             Environment.ExitCode = -2;
             break;
         }
@@ -139,11 +139,11 @@ do
     }
     else
     {
-        Console.WriteLine("未知选项(Unknown choice)");
+        Console.WriteLine("未知选项 (Unknown choice)");
         next = true;
     }
 }
 while (next);
 
-Console.WriteLine("Press any key to continue");
+Console.WriteLine("按任意键继续 (Press any key to continue)");
 Console.ReadKey(true);
