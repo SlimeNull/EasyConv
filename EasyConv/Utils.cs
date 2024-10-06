@@ -12,20 +12,15 @@ namespace EasyConv
         public static readonly string RegistryBase = @"HKEY_CLASSES_ROOT\*\shell\converter_ffmpeg";
         public static string? FindFile(string filename)
         {
-            string[]? paths = Environment.GetEnvironmentVariable("PATH")?.Split(";");
+            string[]? paths = Environment.GetEnvironmentVariable("PATH")?.Split(Path.PathSeparator);
             if (paths == null)
                 return null;
 
             foreach (string path in paths)
             {
-                string[] files = Directory.GetFiles(path);
-                foreach (string file in files)
-                {
-                    if (Path.GetFileName(file).Equals(filename, StringComparison.OrdinalIgnoreCase))
-                    {
-                        return file;
-                    }
-                }
+                var file = Path.Combine(path, filename);
+                if (File.Exists(file))
+                    return file;
             }
 
             return null;
